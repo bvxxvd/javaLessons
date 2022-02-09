@@ -8,6 +8,6 @@ public class Main {
         empArray[2] = new Employee("Поляков Максимилиан Игнатьевич", "Начальник отдела ИТ", "vubx0t@mail.ru", "+8(6860)503-23-41", 45838, 40);
         empArray[3] = new Employee("Шилов Касьян Лукьевич", "Главный энергетик", "wnhborq@outlook.com", "+98(49)245-40-87", 52821, 41);
         empArray[4] = new Employee("Родионов Гордей Федосеевич", "Заместитель главного бухгалтера", "gq@yandex.ru", "+9(0758)629-76-21", 22204, 42);
-        for (Employee e : empArray) if (e.age > 40) e.printInfo();
+        for (Employee e : empArray) if (e.getAge() > 40) e.printInfo();
     }
 }

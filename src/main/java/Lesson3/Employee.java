@@ -1,12 +1,12 @@
 package Lesson3;
 
 public class Employee {
-    String fullName;      //ФИО
-    String position;      //должность
-    String email;         //email
-    String phone_number;  //телефон
-    int salary;           //зарплата
-    int age;              //возраст
+    private String fullName;      //ФИО
+    private String position;      //должность
+    private String email;         //email
+    private String phone_number;  //телефон
+    private int salary;           //зарплата
+    private int age;              //возраст
 
     public Employee(String fullName, String position, String email, String phone_number, int salary, int age) {
         this.fullName = fullName;
@@ -15,6 +15,10 @@ public class Employee {
         this.phone_number = phone_number;
         this.salary = salary;
         this.age = age;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     public void printInfo() {
