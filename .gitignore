@@ -1,3 +1,11 @@
 *.iml
 .idea/*
 target/
+/test-output/html/index.html
+/test-output/html/output.html
+/test-output/html/overview.html
+/test-output/html/reportng.css
+/test-output/html/reportng.js
+/test-output/html/sorttable.js
+/test-output/html/suite1_test1_results.html
+/test-output/html/suites.html
