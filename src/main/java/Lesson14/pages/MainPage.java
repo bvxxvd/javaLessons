@@ -13,44 +13,19 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//input[@name='username']")
     private WebElement accountNameField;
 
-    @FindBy (xpath = "//span[text()='Enter password']")
+    @FindBy(xpath = "//span[text()='Enter password']")
     private WebElement enterPasswordButton;
 
-    @FindBy (xpath = "//input[@name='password']")
+    @FindBy(xpath = "//input[@name='password']")
     private WebElement passwordField;
 
-    @FindBy (xpath = "//span[text()='Sign in']")
+    @FindBy(xpath = "//span[text()='Sign in']")
     private WebElement signInButton;
-
-
-
-
-
-
-//    @FindBy(id = "mailbox__login")
-//    private WebElement loginField;
-//
-//    @FindBy(id = "mailbox__password")
-//    private WebElement passField;
-//
-//    @FindBy(id = "mailbox__auth__button")
-//    private WebElement submit;
-
-    public MainPage(WebDriver driver) {
-        super(driver);
-    }
-
-//    public MailBoxPage login(String login, String pass) {
-//        loginField.sendKeys(login);
-//        passField.sendKeys(pass);
-//        submit.click();
-//        return new MailBoxPage(driver);
-//    }
 
     public MailBoxPage login(String login, String password) {
         enterButton.click();
 
-        driver.switchTo().frame(1);
+        driver.switchTo().frame(15);
         accountNameField.sendKeys(login);
         enterPasswordButton.click();
         passwordField.sendKeys(password);
@@ -59,7 +34,7 @@ public class MainPage extends BasePage {
         return new MailBoxPage(driver);
     }
 
-    @Override
-    public void waitForLoaded() {
+    public MainPage(WebDriver driver) {
+        super(driver);
     }
 }
