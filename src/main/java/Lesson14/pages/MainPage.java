@@ -1,5 +1,6 @@
 package Lesson14.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,8 +25,8 @@ public class MainPage extends BasePage {
 
     public MailBoxPage login(String login, String password) {
         enterButton.click();
-
-        driver.switchTo().frame(15);
+//        driver.switchTo().frame(15);
+        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='ag-popup__frame__layout__iframe']")));
         accountNameField.sendKeys(login);
         enterPasswordButton.click();
         passwordField.sendKeys(password);
