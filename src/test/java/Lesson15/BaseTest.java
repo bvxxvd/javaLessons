@@ -7,10 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
 
 import java.util.concurrent.TimeUnit;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
-
 
     protected WebDriver driver;
 
@@ -27,9 +27,7 @@ public class BaseTest {
 
 
     protected MainPage navigate(String url) {
-
         driver.get(url);
-
         return new MainPage(driver);
     }
 }
