@@ -25,6 +25,7 @@ public class BaseTest {
         return driver;
     }
 
+
     protected MainPage navigate(String url) {
 
         driver.get(url);
