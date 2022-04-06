@@ -6,22 +6,27 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 
 public class Main {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "src/main/java/Lesson11/chromedriver.exe");
 
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver;
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 
         driver.get("https://mail.ru/");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
 
         WebElement enterButton = driver.findElement(By.xpath("//button[text()='Войти' and contains (@class,'ph-login')]"));
         enterButton.click();
 
-        driver.switchTo().frame(1);
+        //переключаемся в iframe
+        driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='ag-popup__frame__layout__iframe']")));
 
         WebElement accountNameField = driver.findElement(By.xpath("//div[@id='root']/descendant::input[@name='username']"));
         accountNameField.sendKeys("daniel_defo@internet.ru");
